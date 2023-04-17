@@ -25,7 +25,7 @@ export const Header: React.FC<RefineThemedLayoutV2HeaderProps> = () => {
   const { data: user } = useGetIdentity<IUser>();
 
   return (
-    <AppBar position="sticky">
+    <AppBar position="sticky" sx={{...(mode === "light" ? {backgroundColor: "#1776D1"} : {backgroundColor: '#000'})}}>
       <Toolbar>
         <Stack
           direction="row"
@@ -33,7 +33,7 @@ export const Header: React.FC<RefineThemedLayoutV2HeaderProps> = () => {
           justifyContent="flex-end"
           alignItems="center"
         >
-          <HamburgerMenu />
+            <HamburgerMenu />
           <Stack
             direction="row"
             width="100%"
